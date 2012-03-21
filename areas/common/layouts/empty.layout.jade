@@ -1,0 +1,9 @@
+//- You will most likely find cases where you need pages
+//- that do not have your global styles applied but contain
+//- your global frameworks.
+//- (usually something to do with dialogs that contain iframes)
+
+extends ./required.layout
+
+block scripts
+	!{script('global', 'common')}

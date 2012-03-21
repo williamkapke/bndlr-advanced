@@ -1,0 +1,44 @@
+extends ../../common/layouts/global.layout
+
+block append styles
+	!{style('splash')}
+
+block append content
+	p This is a more advanced site that uses bndlr to coordinate&nbsp;
+		span js
+		|  &
+		span css
+		|  minification and bundling across separate 'areas'
+	br
+	if min
+		a(href='/') Click here for non-minified bundles
+	else
+		a(href='/?min=1') Click here for minified bundles
+	br
+	br
+
+	h3 Bundles used on this page:
+
+	//- you can use the static helper to get the file paths
+	p
+		a(href=static('js', 'global', 'common'),target='_blank')= static('js', 'global', 'common')
+		br
+		a(href=static('css', 'global', 'common'),target='_blank')= static('css', 'global', 'common')
+		br
+		a(href=static('js', 'splash'),target='_blank')= static('js', 'splash')
+		br
+		a(href=static('css', 'splash'),target='_blank')= static('css', 'splash')
+		br
+	br
+	br
+	h3 All bundles in the 'common' area:
+	-var config = common
+	include ../../common/includes/bundle_dump
+	br
+	br
+	h3 All bundles in the 'splash' area:
+	-var config = splash
+	include ../../common/includes/bundle_dump
+
+block append scripts
+	!{script('splash')}

@@ -1,0 +1,29 @@
+{
+	"name": "bndlr-advanced",
+	"version": "0.1.0",
+	"description": "An basic website that uses bndlr for bundling static content",
+	"homepage": "http://github.com/williamwicks/bndlr-advanced",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:williamwicks/bndlr-advanced.git"
+	},
+	"author"  : {
+		"name"  : "William Wicks",
+		"email" : "wjwicks@gmail.com"
+	},
+	"dependencies": {
+		"bndlr": "0.1.6",
+		"express": "2.5.8",
+		"jade": "*"
+	},
+	"devDependencies": {
+		"optimist": "0.3.x",
+		"uglify-js": "1.2.x",
+		"clean-css": "0.3.x"
+	},
+	"main": "app",
+	"engines": {
+		"node": ">=0.4.0"
+	},
+	"licenses": [{"type": "MIT", "url": "http://www.opensource.org/licenses/MIT"}]
+}

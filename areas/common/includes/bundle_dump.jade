@@ -1,0 +1,26 @@
+ul
+	for bundles, type in config
+		-var cnt = Object.keys(bundles).length
+		-var area = /\/areas\/([^/]+)/.exec(config.path)[1]
+		li #{type}
+			if cnt == 0
+				ul: li [no bundles found]
+			else
+				ul
+					for bundle, name in bundles
+						li
+							a(href=static(type, name, area), target='_blank')=static(type, name, area)
+							ul
+								-var files = bundle.files
+								if files.length == 0
+									li [none]
+								else
+									for file in files
+										if isBundle(file)
+											li [bundle ref:] #{file.configdir.replace(webroot, '')}/#{file.type}/#{file.filename}
+										else
+											-var url = (min? addMin(file.fullpath) : file.fullpath).replace(webroot, '')
+											if(file.exists)
+												li: a(href=url, target='_blank')=url
+											else
+												li #{url} <span style='color:red'>missing</style>

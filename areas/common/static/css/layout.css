@@ -1,0 +1,17 @@
+#wrap{
+	margin: 10px auto 30px;
+	padding: 10px;
+	width: 1024px;
+	border-radius: 6px;
+	background-color: #e3e3e3
+}
+
+#content{
+	margin: 10px;
+	min-height: 300px;
+}
+
+#footer{
+	position: relative;
+	bottom: -42px;
+}

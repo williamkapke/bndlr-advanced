@@ -1,0 +1,17 @@
+//- This layout is generally the most used/referenced layout. It
+//- should contain the global styles that are used on every page
+//- of the site.
+
+extends ./empty.layout
+
+append styles
+	!{style('global', 'common')}
+
+block wrap
+	#header
+		block header
+			include header.jade
+	#content
+		block content
+	block foot
+		#footer © !{new Date().getFullYear()} William Wicks
